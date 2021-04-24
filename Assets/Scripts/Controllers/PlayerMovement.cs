@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovementController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Component References")]
     public Rigidbody2D playerRigidbody;
@@ -16,15 +16,14 @@ public class PlayerMovementController : MonoBehaviour
     private bool jumpStarted = false;
     private bool isOnGround = false;
 
-    public void OnMovement(InputAction.CallbackContext value)
+    public void OnMovement(Vector2 value)
     {
-        Vector2 inputMovement = value.ReadValue<Vector2>();
-        rawInputMovement = new Vector3(inputMovement.x, 0);
+        rawInputMovement = new Vector3(value.x, value.y);
     }
 
-    public void OnJump(InputAction.CallbackContext value)
+    public void OnJump()
     {
-        if (value.started && isOnGround)
+        if (isOnGround)
         {
             jumpStarted = true;
         }
