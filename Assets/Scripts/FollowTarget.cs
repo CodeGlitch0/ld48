@@ -10,7 +10,7 @@ public class FollowTarget : MonoBehaviour
     [SerializeField] private bool lockY = false;
     [SerializeField] private bool lockZ = true;
 
-    void Update()
+    void LateUpdate()
     {
         var currentPosition = transform.position;
         var targetPosition = target.position;
