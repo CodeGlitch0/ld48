@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMovement(Vector2 value)
     {
-        rawInputMovement = new Vector3(value.x, value.y);
+        rawInputMovement = new Vector3(value.x, 0);
     }
 
     public void OnJump()

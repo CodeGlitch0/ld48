@@ -14,7 +14,7 @@ public class PlayerInputController : MonoBehaviour
     public void OnMovementInput(InputAction.CallbackContext value)
     {
         Vector2 inputMovement = value.ReadValue<Vector2>();
-        var rawInputMovement = new Vector2(inputMovement.x, 0);
+        var rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
 
         OnMove?.Invoke(rawInputMovement);
     }

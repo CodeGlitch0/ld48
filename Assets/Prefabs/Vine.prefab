@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6093298226625825533}
   - component: {fileID: 6093298226625825532}
   - component: {fileID: 6093298226625825523}
+  - component: {fileID: 4676600350914078666}
   m_Layer: 0
   m_Name: Vine Segment (4)
   m_TagString: Vine
@@ -156,6 +157,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4676600350914078666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093298226625825521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92a47919f08a2f459de503a5df9829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VineAbove: {fileID: 2217270924203654539}
+  VineBelow: {fileID: 3261512265895276725}
 --- !u!1 &6093298226781373953
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +184,7 @@ GameObject:
   - component: {fileID: 6093298226781373965}
   - component: {fileID: 6093298226781373964}
   - component: {fileID: 6093298226781373955}
+  - component: {fileID: 5949147395452923027}
   m_Layer: 0
   m_Name: Vine Segment (1)
   m_TagString: Vine
@@ -312,6 +328,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5949147395452923027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093298226781373953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92a47919f08a2f459de503a5df9829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VineAbove: {fileID: 2150820988553673852}
+  VineBelow: {fileID: 6312590284192378755}
 --- !u!1 &6093298226852178155
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +393,7 @@ GameObject:
   - component: {fileID: 6093298226980599444}
   - component: {fileID: 6093298226980599446}
   - component: {fileID: 6093298226980599445}
+  - component: {fileID: 2217270924203654539}
   m_Layer: 0
   m_Name: Vine Segment (3)
   m_TagString: Vine
@@ -506,6 +537,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2217270924203654539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093298226980599435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92a47919f08a2f459de503a5df9829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VineAbove: {fileID: 6312590284192378755}
+  VineBelow: {fileID: 4676600350914078666}
 --- !u!1 &6093298227136094787
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +564,7 @@ GameObject:
   - component: {fileID: 6093298227136094799}
   - component: {fileID: 6093298227136094798}
   - component: {fileID: 6093298227136094797}
+  - component: {fileID: 8139383263087900846}
   m_Layer: 0
   m_Name: Vine Segment (6)
   m_TagString: Vine
@@ -662,6 +708,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8139383263087900846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093298227136094787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92a47919f08a2f459de503a5df9829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VineAbove: {fileID: 3261512265895276725}
+  VineBelow: {fileID: 0}
 --- !u!1 &6093298227339388173
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +787,7 @@ GameObject:
   - component: {fileID: 6093298227719018913}
   - component: {fileID: 6093298227719018915}
   - component: {fileID: 6093298227719018914}
+  - component: {fileID: 3261512265895276725}
   m_Layer: 0
   m_Name: Vine Segment (5)
   m_TagString: Vine
@@ -870,6 +931,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3261512265895276725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093298227719018912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92a47919f08a2f459de503a5df9829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VineAbove: {fileID: 4676600350914078666}
+  VineBelow: {fileID: 8139383263087900846}
 --- !u!1 &6093298227999456466
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +958,7 @@ GameObject:
   - component: {fileID: 6093298227999456478}
   - component: {fileID: 6093298227999456477}
   - component: {fileID: 6093298227999456479}
+  - component: {fileID: 2150820988553673852}
   m_Layer: 0
   m_Name: Vine Segment
   m_TagString: Vine
@@ -1026,6 +1102,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2150820988553673852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093298227999456466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92a47919f08a2f459de503a5df9829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VineAbove: {fileID: 0}
+  VineBelow: {fileID: 5949147395452923027}
 --- !u!1 &6093298228156215147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1129,7 @@ GameObject:
   - component: {fileID: 6093298228156215156}
   - component: {fileID: 6093298228156215158}
   - component: {fileID: 6093298228156215157}
+  - component: {fileID: 6312590284192378755}
   m_Layer: 0
   m_Name: Vine Segment (2)
   m_TagString: Vine
@@ -1182,3 +1273,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6312590284192378755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093298228156215147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92a47919f08a2f459de503a5df9829d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VineAbove: {fileID: 5949147395452923027}
+  VineBelow: {fileID: 2217270924203654539}
