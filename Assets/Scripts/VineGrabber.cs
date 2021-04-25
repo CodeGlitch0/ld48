@@ -9,7 +9,7 @@ public class VineGrabber : MonoBehaviour
     [SerializeField] private float releaseVineExtraForce = 50f;
     [SerializeField] private float verticalClimbSpeed = 1f;
 
-    [SerializeField] private VineSegment currentTouchingVine = null;
+    private VineSegment currentTouchingVine = null;
     private bool isHoldingVine = false;
     private bool justReleasedVine = false;
 
