@@ -9,7 +9,7 @@ public class VineGrabber : MonoBehaviour
     [SerializeField] private float releaseVineExtraForce = 50f;
     [SerializeField] private float verticalClimbSpeed = 1f;
 
-    private VineSegment currentTouchingVine = null;
+    private VineSegment currentTouchingVineSegment = null;
     private bool isHoldingVine = false;
     private bool justReleasedVine = false;
 
@@ -30,7 +30,7 @@ public class VineGrabber : MonoBehaviour
 
     public void OnJumpAction()
     {
-        if (currentTouchingVine == null)
+        if (currentTouchingVineSegment == null)
         {
             return;
         }
@@ -43,8 +43,10 @@ public class VineGrabber : MonoBehaviour
         {
             isHoldingVine = true;
             hinge = playerRigidbody.gameObject.AddComponent<HingeJoint2D>();
-            hinge.connectedBody = currentTouchingVine.GetComponent<Rigidbody2D>();
+            hinge.connectedBody = currentTouchingVineSegment.GetComponent<Rigidbody2D>();
             //hinge.autoConfigureConnectedAnchor = false;
+
+            currentTouchingVineSegment.Vine.OnSwung();
         }
     }
 
@@ -55,7 +57,7 @@ public class VineGrabber : MonoBehaviour
         {
             Destroy(hinge);
             hinge = null;
-            currentTouchingVine = null;
+            currentTouchingVineSegment = null;
             justReleasedVine = true;
         }
     }
@@ -63,40 +65,40 @@ public class VineGrabber : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var target = collision.gameObject;
-        if (target.tag != VINE_TAG || isHoldingVine)
+        if (!target.CompareTag(VINE_TAG) || isHoldingVine)
         {
             return;
         }
 
-        if (currentTouchingVine == null)
+        if (currentTouchingVineSegment == null)
         {
-            currentTouchingVine = target.GetComponent<VineSegment>();
+            currentTouchingVineSegment = target.GetComponent<VineSegment>();
         }
-        else if (Vector2.Distance(transform.position, target.transform.position) < Vector2.Distance(transform.position, currentTouchingVine.transform.position))
+        else if (Vector2.Distance(transform.position, target.transform.position) < Vector2.Distance(transform.position, currentTouchingVineSegment.transform.position))
         {
-            currentTouchingVine = target.GetComponent<VineSegment>();
+            currentTouchingVineSegment = target.GetComponent<VineSegment>();
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         var target = collision.gameObject;
-        if (target.tag != VINE_TAG || isHoldingVine)
+        if (!target.CompareTag(VINE_TAG) || isHoldingVine)
         {
             return;
         }
 
         var targetVineSegment = target.GetComponent<VineSegment>();
 
-        if (currentTouchingVine == null)
+        if (currentTouchingVineSegment == null)
         {
-            currentTouchingVine = targetVineSegment;
+            currentTouchingVineSegment = targetVineSegment;
         }
-        else if (currentTouchingVine != targetVineSegment)
+        else if (currentTouchingVineSegment != targetVineSegment)
         {
-            if (Vector2.Distance(transform.position, target.transform.position) < Vector2.Distance(transform.position, currentTouchingVine.transform.position))
+            if (Vector2.Distance(transform.position, target.transform.position) < Vector2.Distance(transform.position, currentTouchingVineSegment.transform.position))
             {
-                currentTouchingVine = targetVineSegment;
+                currentTouchingVineSegment = targetVineSegment;
             }
         } 
     }
@@ -104,15 +106,15 @@ public class VineGrabber : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         var target = collision.gameObject;
-        if (target.tag != VINE_TAG || isHoldingVine)
+        if (!target.CompareTag(VINE_TAG) || isHoldingVine)
         {
             return;
         }
 
         var targetVineSegment = target.GetComponent<VineSegment>();
-        if (targetVineSegment == currentTouchingVine)
+        if (targetVineSegment == currentTouchingVineSegment)
         {
-            currentTouchingVine = null;
+            currentTouchingVineSegment = null;
         }
     }
 
@@ -128,15 +130,15 @@ public class VineGrabber : MonoBehaviour
             {
                 if (hinge.connectedAnchor.y > 0.5)
                 {
-                    hinge.connectedBody = currentTouchingVine.VineAbove.GetComponent<Rigidbody2D>();
-                    currentTouchingVine = currentTouchingVine.VineAbove;
+                    hinge.connectedBody = currentTouchingVineSegment.VineAbove.GetComponent<Rigidbody2D>();
+                    currentTouchingVineSegment = currentTouchingVineSegment.VineAbove;
                 }
                 else if (hinge.connectedAnchor.y < -0.5)
                 {
-                    if (currentTouchingVine.VineBelow != null)
+                    if (currentTouchingVineSegment.VineBelow != null)
                     {
-                        hinge.connectedBody = currentTouchingVine.VineBelow.GetComponent<Rigidbody2D>();
-                        currentTouchingVine = currentTouchingVine.VineBelow;
+                        hinge.connectedBody = currentTouchingVineSegment.VineBelow.GetComponent<Rigidbody2D>();
+                        currentTouchingVineSegment = currentTouchingVineSegment.VineBelow;
                     }
                     else
                     {

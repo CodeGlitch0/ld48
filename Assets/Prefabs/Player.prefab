@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe743c919065f64897ad25577c59156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayerInputEnabled: 0
   OnMove:
     m_PersistentCalls:
       m_Calls:
@@ -313,4 +314,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   releaseVineExtraForce: 30
   verticalClimbSpeed: 2.5
-  currentTouchingVine: {fileID: 0}

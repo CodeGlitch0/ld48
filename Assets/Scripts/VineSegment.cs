@@ -6,4 +6,11 @@ public class VineSegment : MonoBehaviour
 {
     public VineSegment VineAbove;
     public VineSegment VineBelow;
+
+    public Vine Vine;
+
+    private void Start()
+    {
+        Vine = GetComponentInParent<Vine>();
+    }
 }
